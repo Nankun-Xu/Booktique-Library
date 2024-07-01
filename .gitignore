@@ -1,3 +1,6 @@
 node_modules
 .DS_Store
 02-backend/.DS_Store
+/01-frontend/build
+02-backend/.DS_Store
+.DS_Store
