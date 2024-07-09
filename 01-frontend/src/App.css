@@ -52,3 +52,9 @@ background-color: #6b4cc8 ;
     pointer-events: none;
     cursor: default;
  }
+
+ @media (min-width: 768px) {
+    .stars-review-container {
+        display: absolute;
+    }
+}
