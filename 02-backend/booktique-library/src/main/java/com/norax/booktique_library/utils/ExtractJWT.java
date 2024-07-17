@@ -10,10 +10,10 @@ public class ExtractJWT {
 
         token.replace("Bearer ", "");
 
-        String[] elements = token.split("\\.");
+        String[] chunks = token.split("\\.");
         Base64.Decoder decoder = Base64.getUrlDecoder();
 
-        String payload = new String(decoder.decode(elements[1]));//2nd part of JWT:payload
+        String payload = new String(decoder.decode(chunks[1]));//2nd part of JWT:payload
 
         String[] entries = payload.split(",");
         Map<String, String> map = new HashMap<String, String>();
