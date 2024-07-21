@@ -4,47 +4,62 @@ import { LeaveAReview } from "../Utils/LeaveAReview";
 
 export const CheckoutAndReviewBox: React.FC<{
   submitReview: any;
-  book: BookModel | undefined,
-  mobile: boolean,
-  currentLoansCount : number,
-  isAuthenticated: any,
-  isCheckedOut: boolean,
-  checkOutBook: any,
-  isReviewLeft: boolean,
+  book: BookModel | undefined;
+  mobile: boolean;
+  currentLoansCount: number;
+  isAuthenticated: any;
+  isCheckedOut: boolean;
+  checkOutBook: any;
+  isReviewLeft: boolean;
 }> = (props) => {
   function buttonRender() {
     if (props.isAuthenticated) {
       if (!props.isCheckedOut && props.currentLoansCount < 5) {
-        return (<button onClick = {() => props.checkOutBook()} className="btn btn-success btn-lg">Checkout</button>)
-      }else if (props.isCheckedOut) {
-        return (<p><b>Book Checked Out. Enjoy!</b></p>)
-      }else if (!props.isCheckedOut) {
-        return (<p className="text-danger">Book Checked Out. Enjoy!</p>)
+        return (
+          <button
+            onClick={() => props.checkOutBook()}
+            className="btn btn-success btn-lg"
+          >
+            Checkout
+          </button>
+        );
+      } else if (props.isCheckedOut) {
+        return (
+          <p>
+            <b>Book Checked Out. Enjoy!</b>
+          </p>
+        );
+      } else if (!props.isCheckedOut) {
+        return <p className="text-danger">Book Checked Out. Enjoy!</p>;
       }
     }
-    return (<Link to={'/login'} className="btn btn-success btn-lg">Sign in</Link>)
+    return (
+      <Link to={"/login"} className="btn btn-success btn-lg">
+        Sign in
+      </Link>
+    );
   }
 
   function reviewRender() {
     if (props.isAuthenticated && !props.isReviewLeft) {
-      return(
-      <p>
-          <LeaveAReview submitReview={props.submitReview}/>
-      </p>
-      )
-  } else if (props.isAuthenticated && props.isReviewLeft) {
-      return(
-      <p>
+      return (
+        <p>
+          <LeaveAReview submitReview={props.submitReview} />
+        </p>
+      );
+    } else if (props.isAuthenticated && props.isReviewLeft) {
+      return (
+        <p>
           <b>Thank you for your review!</b>
-      </p>
-      )
-  }
-  return (
-  <div>
-      <hr/>
-      <p>Sign in to be able to leave a review.</p>
-  </div>
-  )
+        </p>
+      );
+    }
+    return (
+      <div>
+        <hr />
+        <p>Sign in to be able to leave a review.</p>
+      </div>
+    );
   }
 
   return (
@@ -78,7 +93,7 @@ export const CheckoutAndReviewBox: React.FC<{
             </p>
           </div>
         </div>
-          {buttonRender()}
+        {buttonRender()}
         <hr />
         <p className="mt-3">
           This number can change until placing order has been complete.
