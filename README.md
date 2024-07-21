@@ -80,32 +80,35 @@ The Booktique-Library Project is a web application that allows users to search f
     ```
 
 ## Project Structure
+
+```plaintext
 Booktique-Library/
 ├── 01-frontend/
-│ ├── public/
-│ ├── src/
-│ │ ├── Auth/
-│ │ ├── Images/
-│ │ ├── layouts/
-│ │ ├── lib/
-│ │ ├── models/
-│ │ ├── App.tsx
-│ │ ├── index.tsx
-│ ├── .env
-└── README.md
+│   ├── public/
+│   ├── src/
+│   │   ├── Auth/
+│   │   ├── Images/
+│   │   ├── layouts/
+│   │   ├── lib/
+│   │   ├── models/
+│   │   ├── App.tsx
+│   │   ├── index.tsx
+│   ├── .env
+│   ├── README.md
 ├── 02-backend/
-│ ├── src/main/java/com/norax/booktique-library/
-│ │ ├── BooktiqueLibraryApplication.java
-│ │ ├── config/
-│ │ ├── controller/
-│ │ ├── requestmodel/
-│ │ ├── responsemodel/
-│ │ ├── entity/
-│ │ ├── dao(repository)/
-│ │ ├── service/
-│ │ ├── utils/
-│ └── resources/
-│ ├── application.properties
+│   ├── src/main/java/com/norax/booktique_library/
+│   │   ├── BooktiqueLibraryApplication.java
+│   │   ├── config/
+│   │   ├── controller/
+│   │   ├── requestmodel/
+│   │   ├── responsemodel/
+│   │   ├── entity/
+│   │   ├── dao(repository)/
+│   │   ├── service/
+│   │   ├── utils/
+│   └── resources/
+│       ├── application.properties
+```
 
 
 
