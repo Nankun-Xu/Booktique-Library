@@ -16,7 +16,7 @@ export const LibraryServices = () => {
                     </p>
                     <div className='d-grid gap-2 justify-content-md-start mb-4 mb-lg-3'>
                         {authState?.isAuthenticated ?
-                            <Link type = 'button' className='btn btn-custom main-color btn-lg px-4 me-md-2 fw-bold' to='#'>Library Services</Link> :
+                            <Link type = 'button' className='btn btn-custom main-color btn-lg px-4 me-md-2 fw-bold' to='/messages'>Library Services</Link> :
                             <Link type = 'button' className='btn btn-custom main-color btn-lg' to='/login'>Sign up</Link>
                         }
                     </div>

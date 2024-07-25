@@ -1,6 +1,8 @@
 package com.norax.booktique_library.config;
 
 import com.norax.booktique_library.entity.Book;
+import com.norax.booktique_library.entity.Message;
+import com.norax.booktique_library.entity.Review;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -29,9 +31,13 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         // Expose entity IDs in the JSON response
         config.exposeIdsFor(Book.class);
+        config.exposeIdsFor(Review.class);
+        config.exposeIdsFor(Message.class);
 
         // Disable HTTP methods for Book entity: POST, PATCH, DELETE, PUT
         disableHttpMethods(Book.class, config, theUnsupportedActions);
+        disableHttpMethods(Review.class, config, theUnsupportedActions);
+        disableHttpMethods(Message.class, config, theUnsupportedActions);
 
         // Configure CORS mapping to allow requests from the specified origins
         cors.addMapping(config.getBasePath() + "/**")
