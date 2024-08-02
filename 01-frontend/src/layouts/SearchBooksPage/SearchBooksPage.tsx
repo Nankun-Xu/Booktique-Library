@@ -157,6 +157,11 @@ export const SearchBooksPage = () => {
                       All
                     </a>
                   </li>
+                  <li onClick={() => categoryField('TH')}>
+                    <a className="dropdown-item" href="#">
+                      Theory
+                    </a>
+                  </li>
                   <li onClick={() => categoryField('FE')}>
                     <a className="dropdown-item" href="#">
                       Front End
@@ -169,12 +174,12 @@ export const SearchBooksPage = () => {
                   </li>
                   <li onClick={() => categoryField('Data')}>
                     <a className="dropdown-item" href="#">
-                      Data
+                      Data Science
                     </a>
                   </li>
-                  <li onClick={() => categoryField('Devops')}>
+                  <li onClick={() => categoryField('UX')}>
                     <a className="dropdown-item" href="#">
-                      DevOps
+                      User Experience
                     </a>
                   </li>
                 </ul>

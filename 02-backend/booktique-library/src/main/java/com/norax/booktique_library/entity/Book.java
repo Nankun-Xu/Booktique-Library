@@ -10,7 +10,7 @@ import javax.persistence.*;
 //entity class, means a chart in database
 public class Book {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 

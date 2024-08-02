@@ -21,9 +21,9 @@ public class SecurityConfiguration {
         http.authorizeRequests(configurer ->
                         configurer
                                 .antMatchers("/api/books/secure/**",
-                                        "/api/reviews/secure/**")
-//                                        "/api/messages/secure/**",
-//                                        "/api/admin/secure/**")
+                                        "/api/reviews/secure/**",
+                                        "/api/messages/secure/**",
+                                        "/api/admin/secure/**")
                                 // Configures the application to use OAuth2 resource server capabilities with JWT
                                 .authenticated())
                 .oauth2ResourceServer()

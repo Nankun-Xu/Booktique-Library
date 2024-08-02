@@ -22,6 +22,8 @@ export const AddNewBook = () => {
         setCategory(value);
     }
 
+
+    //convert image into base62 file and save into database
     async function base64ConversionForImages(e: any) {
         if (e.target.files[0]) {
             getBase64(e.target.files[0]);
@@ -108,10 +110,11 @@ export const AddNewBook = () => {
                                         {category}
                                 </button>
                                 <ul id='addNewBookId' className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
+                                    <li><a onClick={() => categoryField('TH')} className='dropdown-item'>Theory</a></li>
                                     <li><a onClick={() => categoryField('FE')} className='dropdown-item'>Front End</a></li>
                                     <li><a onClick={() => categoryField('BE')} className='dropdown-item'>Back End</a></li>
-                                    <li><a onClick={() => categoryField('Data')} className='dropdown-item'>Data</a></li>
-                                    <li><a onClick={() => categoryField('DevOps')} className='dropdown-item'>DevOps</a></li>
+                                    <li><a onClick={() => categoryField('Data')} className='dropdown-item'>Data Science</a></li>
+                                    <li><a onClick={() => categoryField('UX')} className='dropdown-item'>User Experience</a></li>
                                 </ul>
                             </div>
                         </div>
