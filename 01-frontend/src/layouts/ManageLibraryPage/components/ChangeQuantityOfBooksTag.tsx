@@ -5,7 +5,7 @@ import { SpinnerLoading } from '../../Utils/SpinnerLoading';
 import { Pagination } from '../../Utils/Pagination';
 import { ChangeQuantityOfBook } from "./ChangeQuantityOfBook";
 
-export const ChangeQuantityOfBooks = () => {
+export const ChangeQuantityOfBooksTag = () => {
 
     const [books, setBooks] = useState<BookModel[]>([]);
     const [isLoading, setIsLoading] = useState(true);

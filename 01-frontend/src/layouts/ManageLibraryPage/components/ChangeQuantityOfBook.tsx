@@ -9,6 +9,7 @@ export const ChangeQuantityOfBook: React.FC<{ book: BookModel, deleteBook: any }
     const [remaining, setRemaining] = useState<number>(0);
 
     useEffect(() => {
+        //initialize quantity and remaining state from the book props
         const fetchBookInState = () => {
             props.book.copies ? setQuantity(props.book.copies) : setQuantity(0);
             props.book.copiesAvailable ? setRemaining(props.book.copiesAvailable) : setRemaining(0);
@@ -16,6 +17,7 @@ export const ChangeQuantityOfBook: React.FC<{ book: BookModel, deleteBook: any }
         fetchBookInState();
     }, []);
 
+    // Function to increase the quantity of the book
     async function increaseQuantity() {
         const url = `http://localhost:8080/api/admin/secure/increase/book/quantity/?bookId=${props.book?.id}`;
         const requestOptions = {
@@ -34,6 +36,7 @@ export const ChangeQuantityOfBook: React.FC<{ book: BookModel, deleteBook: any }
         setRemaining(remaining + 1);
     }
 
+    // Function to decrease the quantity of the book
     async function decreaseQuantity() {
         const url = `http://localhost:8080/api/admin/secure/decrease/book/quantity/?bookId=${props.book?.id}`;
         const requestOptions = {
@@ -52,6 +55,7 @@ export const ChangeQuantityOfBook: React.FC<{ book: BookModel, deleteBook: any }
         setRemaining(remaining - 1);
     }
 
+    // Function to delete the book
     async function deleteBook() {
         const url = `http://localhost:8080/api/admin/secure/delete/book/?bookId=${props.book?.id}`;
         const requestOptions = {
@@ -110,8 +114,8 @@ export const ChangeQuantityOfBook: React.FC<{ book: BookModel, deleteBook: any }
                         <button className='m-1 btn btn-md btn-danger' onClick={deleteBook}>Delete</button>
                     </div>
                 </div>
-                <button className='m1 btn btn-md main-color text-white' onClick={increaseQuantity}>Add Quantity</button>
-                <button className='m1 btn btn-md btn-warning' onClick={decreaseQuantity}>Decrease Quantity</button>
+                <button className='m1 btn btn-custom main-color' onClick={increaseQuantity}>Add Quantity</button>
+                <button className='m1 btn btn-custom btn-warning' onClick={decreaseQuantity}>Decrease Quantity</button>
             </div>
         </div>
     );
