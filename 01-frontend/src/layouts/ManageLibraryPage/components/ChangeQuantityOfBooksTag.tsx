@@ -17,9 +17,10 @@ export const ChangeQuantityOfBooksTag = () => {
 
     const [bookDelete, setBookDelete] = useState(false);
 
+    // Function to fetch books from the backend and get total amount of books
     useEffect(() => {
         const fetchBooks = async () => {
-            const baseUrl: string = `http://localhost:8080/api/books?page=${currentPage - 1}&size=${booksPerPage}`;
+            const baseUrl: string = `${process.env.REACT_APP_API}/books?page=${currentPage - 1}&size=${booksPerPage}`;
 
             const response = await fetch(baseUrl);
 
@@ -56,10 +57,13 @@ export const ChangeQuantityOfBooksTag = () => {
             setIsLoading(false);
             setHttpError(error.message);
         })
-    }, [currentPage, bookDelete]);
+    }, [currentPage, bookDelete]);// Depend on currentPage and bookDelete to re-fetch data when these change
 
+    // Calculate index of the last,first book on the current page
     const indexOfLastBook: number = currentPage * booksPerPage;
     const indexOfFirstBook: number = indexOfLastBook - booksPerPage;
+
+    // Determine the last item number on the current page
     let lastItem = booksPerPage * currentPage <= totalAmountOfBooks ?
         booksPerPage * currentPage : totalAmountOfBooks;
 

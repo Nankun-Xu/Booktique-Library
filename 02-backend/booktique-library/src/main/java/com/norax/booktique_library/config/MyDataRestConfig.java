@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
     // Allowed origins for CORS (Cross-Origin Resource Sharing)
-    private String theAllowedOrigins = "http://localhost:3000";
+    private String theAllowedOrigins = "https://localhost:3000";
 
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
