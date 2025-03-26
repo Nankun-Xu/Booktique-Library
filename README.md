@@ -80,6 +80,7 @@ The Booktique-Library Project is a web application that allows users to search f
     ```
 
 ## Project Structure
+![jLVDRkCs4BxhATIzr4NR5p2AnJf95msGHHS9zbJqmCWJUs2AL8SZBunYtxqa9I5ZaPQ98gk336k--U4tdqRa1yUAk6zrzGFleOMwqmfDzMFzw_ogRwrvmLtzMJK7jOCKK7MZvLqJaU_gVwlQNurMpjLFqFI4V1gY3APu_LmFy9vWjMVkrlKV_Zx1VrhNHujRWNQZvIDg1hhTApGhZtfA7qUdRwA6Fm-iClbtmD6Y4GpVRsCq](https://github.com/user-attachments/assets/8afb34a8-9855-45e3-b797-1aac90769ec4)
 
 ```plaintext
 Booktique-Library/
